@@ -1,0 +1,66 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# orderManagement
+
+Polls is a simple API allowing consumers to view and create orders.
+
+## Order Collection [/orderManagement]
+
+### List All Orders [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "orders": [
+                    {
+                        "id": 102030,
+                        "client": "Carla Martinez",
+                        "address": "Av Vitacura 2939 piso 6",
+                        "date": "01/01/2019",
+                        "status": "en preparacion"
+                    }, {
+                         "id": 102031,
+                        "client": "Arturo Gomez",
+                        "address": "Las condes 123",
+                        "date": "02/01/2019",
+                        "status": "preparado"
+                    }, {
+                         "id": 102032,
+                        "client": "Javier Lopez",
+                        "address": "Av Vitacura 2939 piso 6",
+                        "date": "02/01/2019",
+                        "status": "sin stock"
+                    }, {
+                         "id": 102033,
+                        "client": "Catalina Perez",
+                        "address": "Calle Isidora 2245",
+                        "date": "01/01/2019",
+                        "status": "preparado"
+                    }
+                ]
+            }
+        ]
+
+### Create a New Order [POST]
+
+You may create your own question using this action. It takes a JSON
+object containing a order detail.
+
++ Request (application/json)
+
+        {
+            "client": "client Name",
+            "address": "String",
+            "date": "01/01/2019",
+            "status": "status"
+        }
+
++ Response 201 (application/json)
+
+    + Body
+
+            {
+                "id": 102036
+            }
