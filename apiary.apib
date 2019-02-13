@@ -64,3 +64,31 @@ Polls is a simple API allowing consumers to view and create orders.
                     }
                 ]
             }
+
+## Get Order [/getOrder]
+
+### getOrder [POST]
+
++ Request (application/json)
+
+        {
+            "orderId": 102030
+        }
+
++ Response 200 (application/json)
+
+    + Body
+
+                    {
+                        "id": 102030,
+                        "client": "Carla Martinez",
+                        "address": "Av Vitacura 2939 piso 6",
+                        "date": "01/01/2019",
+                        "status": "en preparacion",
+                        "value": 100,
+                        "product": {
+                            "name":"shoes",
+                            "description":"girl shoes",
+                            "color":"red"
+                        }
+                    }
